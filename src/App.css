@@ -25,3 +25,38 @@
 .upload__input{
   display:none;
 }
+.home__video{
+  display: grid ;
+  grid-template-columns: repeat(auto-fit,minmax(198px,1fr)) ;
+  justify-items:center;
+  gap: 15px;
+
+}
+
+@media only screen and (max-width:770px) {
+  
+ .nav__search{
+   width: 340px !important;
+  }
+  .sidebar p{
+      display: none;
+  }
+  .sidebar{
+    width: 5rem;
+  }
+  .home{
+    margin-left: 5rem;
+  }
+}
+@media only screen and (max-width:550px) {
+  .nav__search{
+    width: 152px !important;
+   }
+  .nav__mic{
+        display: none;
+   }
+  .nav{
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
+   }
+}

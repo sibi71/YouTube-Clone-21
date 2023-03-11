@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import { CategoryItems } from '../static/data'
 import { auth, db } from "../firebase"
-import { collection, onSnapshot, query } from 'firebase/firestore'
+import { collection, onSnapshot, query  } from 'firebase/firestore'
 import { Link } from "react-router-dom"
 import Video  from "../components/Video"
 import "../App.css"
@@ -18,12 +18,13 @@ const Home = () => {
   const [videos , setVideos] = useState([])
   const dispatch = useDispatch()
 
-
   useEffect(()=>{
-    const q =query(collection(db,"videos"));
-    onSnapshot(q,(snapshot)=>{
+    const q = query(collection(db,"videos"))
+    onSnapshot(q,(shapshot)=>{
       setVideos(
-        snapshot.docs.map((doc)=>({
+        shapshot.docs.map((doc)=>(
+          {
+          
           ...doc.data(),
           id:doc.id
 
@@ -32,6 +33,7 @@ const Home = () => {
     })
 
   },[])
+
   
   useEffect(()=>{
     onAuthStateChanged(auth,(user)=>{
@@ -47,7 +49,7 @@ const Home = () => {
   return (
     <>
       <Sidebar/>
-      <div className="W-[calc(100%-240px)] h-[calc(100%-53px)] pt-16 bg-yt-black ml-60 ">
+      <div className="W-[calc(100%-240px)] h-[calc(100%-53px)] pt-16 bg-yt-black ml-60 home">
         <div className="flex flex-row px-3 overflow-x-scroll relative scrollbar-hide ">
         {
           CategoryItems.map((item,index)=> {
@@ -59,7 +61,7 @@ const Home = () => {
           })
         }
         </div>
-        <div className=" pt-12 px-5 grid grid-cols-4 gap-4  h-[calc(100vh-100px)] overflow-y-scroll yt-scrollbar ">
+        <div className=" pt-12 px-5  h-[calc(100vh-100px)] overflow-y-scroll yt-scrollbar home__video">
           {
             videos.length === 0 ?(
               <div className="h-[86vh]"></div>
@@ -67,7 +69,7 @@ const Home = () => {
               videos.map((video,index)=>{
                 return(
                 <Link to={`/video/${video.id}`} key={video.id} >
-                  <Video {...video}/>
+                  <Video {...video} />
                 </Link>
                 )
               })

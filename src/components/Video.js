@@ -5,7 +5,7 @@ import { MdVerified } from 'react-icons/md'
 const Video = ({thumbnail,duration,title ,channal,views,uploadTime,logo,name}) => {
   return (
 
-    <div className="flex flex-col max-w-[260px] cursor-pointer ">
+    <div className="flex flex-col max-w-[260px] cursor-pointer  ">
       <div className=" relative w-full">
         <img src={thumbnail}
         alt={name}

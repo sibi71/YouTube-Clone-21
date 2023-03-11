@@ -26,9 +26,9 @@ const user = useSelector(getUser);
     dispatch(logout())
     await signOut(auth)
   }
-console.log(user);
+
   return (
-    <div className="bg-yt-black h-14 flex items-center pl-4 pr-5 justify-between fixed w-full z-10">
+    <div className="bg-yt-black h-14 flex items-center pl-4 pr-5 justify-between fixed w-full z-10 nav">
       <div className='flex justify-between items-center'>
         <div className="text-yt-white p-2 w-10  text-2xl text-center hover:bg-yt-light-black rounded-full cursor-pointer">
           <Link to="/"> <HiOutlineBars3 /> </Link>
@@ -46,7 +46,7 @@ console.log(user);
       </div>
 
       <div className=" h-10 flex flex-row items-center ">
-        <div className="w-[593px] bg-yt-black flex border border-yt-light-black items-center rounded-3xl h-10">
+        <div className="w-[593px] bg-yt-black flex border border-yt-light-black items-center rounded-3xl h-10 nav__search" >
           <input type="search"
           placeholder='search'
           className=" w-full bg-yt-black h-6 ml-6 text-yt-white text-start align-items-center focus:outline-none  pl-4 "
@@ -58,7 +58,7 @@ console.log(user);
           />
           </button>
         </div>
-        <div className=" text-yt-white bg-yt-light w-10 h-10 items-center flex justify-center rounded-full ml-4 hover:bg-yt-light-black  cursor-pointer">
+        <div className=" text-yt-white bg-yt-light w-10 h-10 items-center flex justify-center rounded-full ml-4 hover:bg-yt-light-black  cursor-pointer nav__mic">
             <MdMic 
             size={23}
             className="text-center"
@@ -73,7 +73,7 @@ console.log(user);
             <BiVideoPlus size={25} className="text-yt-white text-center" />
             </Link>
           </div>
-          <div className="mx-3 p-2 w-10 hover:bg-yt-light-black rounded-full cursor-pointer">
+          <div className="mx-3 p-2 w-10 hover:bg-yt-light-black rounded-full cursor-pointer nav__mic">
             <FaRegBell size={22}
             className="text-center text-yt-white" />
           </div>

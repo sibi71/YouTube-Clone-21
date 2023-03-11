@@ -88,8 +88,8 @@ const Video = () => {
         }
       }
   return (
-    <div className="py-20 px-9 bg-yt-black flex flex-row  overflow-scroll yt-scrollbar  h-[calc(100vh-(-40px))] ">
-            <div className=" left flex-1 w-100">
+    <div className="py-20 px-9 bg-yt-black flex flex-row  overflow-scroll yt-scrollbar  h-[calc(100vh-(-40px))] video">
+            <div className="video__left flex-1 w-100">
                 <div className="flex justify-center">
                 <iframe 
                 src={`https://www.youtube.com/embed/${data?.link}`}
@@ -102,7 +102,7 @@ const Video = () => {
                 className="w-[850px] h-[700px] flex-1"
                 ></iframe>
                 </div>
-                <h2 className="text-yt-white font-semibold mt-3 mb-1 text-lg">
+                <h2 className="text-yt-white font-semibold mt-3 mb-1 text-lg px-3">
                     {data?.title}
                 </h2>
                 <div className="flex">
@@ -123,7 +123,7 @@ const Video = () => {
                             {data?.subscribers }<span className="pl-1"> subscribers</span>
                         </p>
                     </div>
-                    <button className="bg-yt-white px-3 py-2 rounded-full text-sm font-medium ml-3 justify-center ">
+                    <button className="bg-yt-white px-3 py-2 rounded-full text-sm font-medium ml-3 justify-center text-yt-black">
                         Subscribe
                     </button>
                     <div className="flex pl-28">

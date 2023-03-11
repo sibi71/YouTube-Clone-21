@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
   const [active ,setActive]=useState("Home")
   return (
-    <div className=" yt-scrollbar w-60 bg-yt-black h-[calc(105vh-53px)] mt-14 fixed top-0 left-0 text-yt-white p-3 overflow-scroll ">
+    <div className=" yt-scrollbar w-60 bg-yt-black h-[calc(105vh-53px)] mt-14 fixed top-0 left-0 text-yt-white p-3 overflow-scroll sidebar">
         <div  className="mb-4">
           {SiderBarItems.Top.map((item,index)=>{
             return (
